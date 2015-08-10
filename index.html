@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<meta name="msapplication-TileColor" content="#ffc40d">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+		<meta itemprop="name" content="Luptimer">
+		<meta itemprop="description" content="A microsecond javascript timer library. Ultra precise.">
+		<link rel="canonical" href="http://www.luptimer.com"/>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<meta itemprop="image" content="http://www.luptimer.com/image.png">
+		<meta name="twitter:image:src" content="http://www.luptimer.com/image.png">
+		<meta name="twitter:creator" content="@gekorm">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Luptimer">
+		<meta name="twitter:description" content="A microsecond javascript timer library. Ultra precise.">
+		<meta property="og:title" content="Luptimer" />
+		<meta property="og:url" content="http://www.luptimer.com/" />
+		<meta property="og:image" content="http://www.luptimer.com/image.png" />
+		<meta property="og:description" content="A microsecond javascript timer library. Ultra precise." />
+		<meta property="og:site_name" content="Luptimer JS lib" />
+		<title>Luptimer</title>
+		<link rel="stylesheet" href="css/fontello.css">
+		<!--[if IE 7]><link rel="stylesheet" href="css/fontello-ie7.css"><![endif]-->
+		<style type="text/css"></style><style type="text/css"></style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+		<meta name="description" content="A microsecond javascript timer library. Ultra precise.">
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-56787738-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+	</head>
+
+	<body>
+		<div id="overcontainer">
+			<div id="topcontainer">
+				<h1 id="texttitle">luptimer</h1>
+			</div>
+
+			<div id="botcontainer">
+				<h3 id="textsub">lightweight ultra precise (javascript) timer</h3>
+			</div>
+		</div>
+
+		<div id="stickyheader">
+			<a href="#howtouse">
+			<div class="hbutton">
+				How to use
+			</div></a> <a href="#bsupport">
+			<div class="hbutton">
+				Browser support
+			</div></a> <a href="#demo">
+			<div class="hbutton">
+				Demo
+			</div></a> <a href="https://github.com/GeKorm/luptimer">
+			<div class="hbutton">
+				<i class="icon-download"></i>GitHub
+			</div></a>
+		</div>
+
+		<div id="documentation">
+			<h2><a id="howtouse" name="howtouse">How to use</a></h2>
+
+			<p>First <strong>create</strong> an instance of luptimer</p>
+
+			<div class="code">
+				<span class="cm">var</span> lup <span class="eq">=</span> $luptimer();
+			</div>
+
+			<p><strong>Start</strong>, <strong>pause</strong>, <strong>reset</strong> the timer</p>
+			
+			<div class="code">
+				<span class="co">//Resume from paused or start from 0</span><br>
+				lup.<span class="fu">start</span>();<br>
+				<span class="co">//Pause at current time</span><br>
+				lup.<span class="fu">pause</span>();<br>
+				<span class="co">//Reset to 0</span><br>
+				lup.<span class="fu">reset</span>();
+			</div>
+	  
+			<p><strong>Display</strong> the time</p>
+	  
+			<div class="code">
+				<span class="co">//Syntax: .display('selector' [, 'unit']). If no unit of time is specified the function returns the time since start() as a float.</span><br><span class="co">//Note: resetting the timer will stop updating the element's text content, so 0 values need to be set manually on reset.</span><br><br>lup.<span class="fu">display</span>(<span class="st">'#hours-dsp'</span>, <span class="st">'hours'</span>);<br>lup.<span class="fu">display</span>(<span class="st">'#mins-dsp'</span>, <span class="st">'minutes'</span>);<br>lup.<span class="fu">display</span>(<span class="st">'#secs-dsp'</span>, <span class="st">'seconds'</span>);<br>lup.<span class="fu">display</span>(<span class="st">'#millis-dsp'</span>, <span class="st">'milliseconds'</span>);<br>lup.<span class="fu">display</span>(<span class="st">'#micros-dsp'</span>, <span class="st">'microseconds'</span>);<br></div>
+
+			<p><strong>Get</strong> the time</p>
+	  
+			<div class="code">
+				<span class="co">Returns the total time since the page loaded, as a float</span><br><span class="cm">var</span> t <span class="eq">= </span>lup.<span class="fu">total</span>();<br><br><span class="co">Returns the time since start() as an integer, as the specified unit of time</span><br><span class="co">//Syntax: .time(['unit']). If no unit of time is specified it defaults to milliseconds.</span><br>t <span class="eq">= </span>lup.<span class="fu">time</span>(<span class="st">'hours'</span>);<br>t <span class="eq">= </span>lup.<span class="fu">time</span>(<span class="st">'minutes'</span>);<br>t <span class="eq">= </span>lup.<span class="fu">time</span>(<span class="st">'seconds'</span>);<br>t <span class="eq">= </span>lup.<span class="fu">time</span>(<span class="st">'milliseconds'</span>);<br>t <span class="eq">= </span>lup.<span class="fu">time</span>(<span class="st">'microseconds'</span>);<br></div>
+	  
+			<h2><a id="bsupport" name="bsupport">Browser Support</a></h2>
+
+			<p style="
+		margin-top: 2%;
+			  ">Luptimer uses the <a href="http://www.w3.org/TR/hr-time/">High Resolution Time API</a> to provide microsecond time measurement capabilities, as well as the <a href="http://www.w3.org/TR/animation-timing/">Animation Timing API</a> for updating the time accurately and with little performance overhead. On browsers without an implementation of either APIs it falls back to more widely supported methods and to millisecond resolution.<br><br>Browser support for microsecond resolution:<br></p><div class="note"><span class="left">U.S.A.</span><span>66.65%</span><br><span class="left">Global</span><span>77.18%</span><br><br><span class="left">Chrome</span><span>20</span><br><span class="left">Firefox</span><span>15</span><br><span class="left">IE</span><span>10</span><br><span class="left">Safari</span><span>8</span><br><span class="left">Opera</span><span>15</span><br><span class="left">Opera Mini</span><span style="
+		color: red;
+	">None</span><br><span class="left">Android Browser</span><span>4.4</span><br><span class="left">Blackberry</span><span>10</span></div><span style="
+		font-size: 12px;
+	">Chrome, Firefox, Opera and Safari for mobile have the same support as their desktop versions.</span><p></p><p></p><p style="
+		margin-top: 28px;
+	">Note that even in supported browsers, accuracy varies by implementation. For example, Chrome 20 to 37 suffer from a bad implementation of the High Resolution Time API and only provide millisecond precision with a ~2ms deviation. See <a href="https://code.google.com/p/chromium/issues/detail?id=158234">Chromium issue #158234</a>.</p>
+
+			<h2><a id="demo" name="demo">Demo</a></h2>
+
+			<div id="framewrap"><iframe src="http://www.gekorm.com/luptimer" width="100%" height="100%" scrolling="no" frameborder="0"></iframe></div>
+		</div>
+
+
+	</body>
+</html>
